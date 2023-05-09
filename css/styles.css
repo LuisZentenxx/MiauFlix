@@ -1,0 +1,13 @@
+:root{
+    --dark: #16191c;
+    --dark-x: #1e2126;
+    --light: #ffff;
+}
+
+body{
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 300;
+    color: var(--light)
+}
+
+.bg-dark{background-color: var(--dark) !important;}
