@@ -6,6 +6,7 @@
 
 body {
     background-color: var(--dark);
+    color: white;
 }
 
 .img_logo {
@@ -23,41 +24,30 @@ body {
     box-sizing: border-box;
 }
 
+
 /*NavBar*/
-.navbar {
-    height: 200px;
-    width: 100%;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(/img-principal/banner.jpeg);
-    background-size: cover;
-    background-position: center;
+
+.navbar-custom {
+    background-color: var(--dark); /* Reemplaza con tu color personalizado */
 }
 
-nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 40px;
-    padding-left: 10%;
-    padding-right: 10%;
+.navbar-custom .nav-link {
+
+    font-size: large;
+    color: #ffffff; /* Reemplaza con tu color deseado para las letras */
+    transition: color 0.8s ease; /* Transición suave de 0.8 segundos */
+
 }
 
-nav ul li {
-    list-style-type: none;
-    display: inline-block;
-    padding: 10px 20 px;
+
+.navbar-custom .nav-link:hover {
+    color: #a200ff; /* Color al hacer hover en las letras */
 }
 
-nav ul li a {
+/*Edicion input para buscar*/
+
+.input-custom {
+    background-color: black;
     color: white;
-    font-weight: bold;
 }
 
-nav ul li a:hover {
-    color: purple;
-    font-weight: bold;
-    transition: 1s;
-}
-
-.navbar ul li {
-    margin-right: 100px; /* Ajusta el valor según el espacio deseado */
-}
