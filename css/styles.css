@@ -1,5 +1,5 @@
 :root{
-    --dark: #16191c;
+    --dark: hsl(210, 12%, 10%);
     --dark-x: #1e2126;
     --light: #ffff;
 }
@@ -11,3 +11,9 @@ body{
 }
 
 .bg-dark{background-color: var(--dark) !important;}
+.bg-dark-x{background-color: var(--dark-x);}
+
+.form-control{
+    min-height: 3.125rem;
+    line-height: initial;
+}
