@@ -17,3 +17,9 @@ body{
     min-height: 3.125rem;
     line-height: initial;
 }
+
+.img-1{
+    background-image: url('img/img-1.png');
+    background-size: cover !important;
+    background-position: center !important;
+}
