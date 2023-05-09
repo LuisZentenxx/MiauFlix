@@ -1,1 +1,2 @@
 # CatCoin
+:D
