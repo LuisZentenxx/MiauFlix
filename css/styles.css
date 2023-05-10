@@ -5,6 +5,7 @@
 }
 
 body{
+    background-color: var(--dark);
     font-family: 'League Spartan', sans-serif;
     font-weight: 300;
     color: var(--light)
@@ -22,4 +23,8 @@ body{
     background-image: url('img/img-1.png');
     background-size: cover !important;
     background-position: center !important;
+}
+
+.carousel-inner:hover{
+    opacity: 0.5;
 }
