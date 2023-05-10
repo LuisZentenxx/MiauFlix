@@ -53,6 +53,13 @@ body {
     color: white;
 }
 
+/*Slider*/
+
+.carousel-inner .carousel-item {
+    transition-duration: 2s; /* Ajusta el valor a la duración deseada en segundos */
+}
+
+
 /*Cards para las peliculas*/
 
 .main{
@@ -71,6 +78,7 @@ body {
     overflow: hidden;
     border-radius: 10px;
     backdrop-filter: blur(10px);
+    padding-top: 10px;
 }
 
 .movie{
@@ -120,7 +128,7 @@ body {
     left:0;
     right:0;
     bottom:0;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: white;
     padding: 1rem;
     max-height: 100%;
     transform:translateY(101%);
