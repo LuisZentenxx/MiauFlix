@@ -12,14 +12,18 @@ body {
     
 }
 
-.principal{
-    
+
+.principal {
     background-image: url(/img-principal/fondo.jpg);
-    backdrop-filter: 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    backdrop-filter: blur(10px); /* Ajusta el valor de desenfoque según tus preferencias */
 }
 
 
 .img_logo {
+    margin-left: 100px;
     width: 200px;
 }
 
@@ -39,10 +43,15 @@ body {
 
 .navbar-custom {
     background-color: var(--dark); /* Reemplaza con tu color personalizado */
+    background-image: url(/img-principal/fondo.jpg);
+    backdrop-filter: blur(10px); /* Ajusta el valor de desenfoque según tus preferencias */
+    background-size: cover;
+    background-repeat: no-repeat;
+    
 }
 
 .navbar-custom .nav-link {
-
+    margin-right: 100px;
     font-size: large;
     color: #ffffff; /* Reemplaza con tu color deseado para las letras */
     transition: color 0.8s ease; /* Transición suave de 0.8 segundos */
