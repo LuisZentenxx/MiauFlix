@@ -28,3 +28,7 @@ body{
 .carousel-inner:hover{
     opacity: 0.5;
 }
+
+.carousel-inner .carousel-item{
+    transition-duration: 3s;
+}
