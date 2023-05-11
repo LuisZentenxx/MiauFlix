@@ -73,7 +73,7 @@ body {
 /*Slider*/
 
 .carousel-inner .carousel-item {
-    transition-duration: 2s; /* Ajusta el valor a la duración deseada en segundos */
+    transition-duration: 3s; /* Ajusta el valor a la duración deseada en segundos */
 }
 
 

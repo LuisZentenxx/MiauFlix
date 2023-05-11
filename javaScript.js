@@ -66,7 +66,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-
 // formulario de buscar
 
 form.addEventListener('submit',(e)=>{
