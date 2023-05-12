@@ -17,7 +17,7 @@ signupForm.addEventListener('submit', async (e) => {
 
     showMessage("User Created Successfully" )
 
-    window.location.href="signIns.html";
+    window.location.href="principal.html";
 
     } catch (error){
         console.log(error.message)
