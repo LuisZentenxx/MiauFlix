@@ -12,6 +12,66 @@ body {
     
 }
 
+.titulo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: white;
+    }
+.titulo:hover {
+    color: black; /* Color al hacer hover en las letras */
+    transition: color 0.8s ease;
+}
+
+/*buscar*/
+
+.search-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+  }
+  
+  .search-input {
+    border: none;
+    border-radius: 20px;
+    background-color: #f0f0f0;
+    padding: 10px 20px;
+    font-size: 18px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    max-width: 600px;
+  }
+  
+  .search-button {
+    border: none;
+    background-color: rgb(176, 85, 176);
+    color: white;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin-left: -57px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+  }
+  
+  .search-button:hover {
+    background-color: purple;
+    cursor: pointer;
+  }
+  
+  .principal {
+    border-radius: 20px;
+    background-color: #f0f0f0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+  }
+  
 
 .principal {
     background-image: url(/src/img/fondo.jpg);
