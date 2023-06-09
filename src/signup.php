@@ -21,24 +21,33 @@
 <body>
     <div class="signup">
         <h1>Sign Up</h1>
-        <form class="needs-validation" id="signups-form">
+        <form class="needs-validation" id="signups-form" action = "php/signUp_backend.php" method = "POST">
+
+            <div class="form-group was-validated">
+                <label for="text" class="form-label">Name</label>
+                <input type="text" name="nombre" class="form-control" id="signups-email" required placeholder="enter your name">
+                
+            </div>
+
             <div class="form-group was-validated">
                 <label for="email" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="signups-email" required>
-                <div class="invalid-feedback">
-                    Please enter your email address
-                </div>
+                <input type="email" name="correo" class="form-control" id="signups-email" required placeholder="enter your email">
+                
             </div>
 
             <div class="form-group was-validated">
                 <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="signups-passwd" required>
-                <div class="invalid-feedback">
-                    Please enter your password
-                </div>
+                <input type="password" class="form-control" id="signups-passwd" required placeholder="enter your password">
+                
             </div>
 
-            <button type="submit" class="btn btn-primary w-100">Create Account</button>
+            <div class="form-group was-validated">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" name="contrasenia" class="form-control" id="signups-passwd" required placeholder="repeat your password">
+                
+            </div>
+
+            <button type="submit" name="submit" class="btn btn-primary w-100">Create Account</button>
         </form>
     </div>
 
