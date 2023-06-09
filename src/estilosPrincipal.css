@@ -2,14 +2,14 @@
     --dark: #16191c;
     --dark-x: #1e2126;
     --light: #ffff;
-    --primary-color:#22254b;
+    --primary-color: #22254b;
     --secondary-color: #373b69;
 }
 
 body {
     background-color: var(--dark);
     color: white;
-    
+
 }
 
 .titulo {
@@ -23,9 +23,11 @@ body {
     letter-spacing: 0.1em;
     color: white;
     padding-top: 50px;
-    }
+}
+
 .titulo:hover {
-    color: black; /* Color al hacer hover en las letras */
+    color: black;
+    /* Color al hacer hover en las letras */
     transition: color 0.8s ease;
 }
 
@@ -36,9 +38,9 @@ body {
     justify-content: center;
     align-items: center;
     margin: 20px 0;
-  }
-  
-  .search-input {
+}
+
+.search-input {
     border: none;
     border-radius: 20px;
     background-color: #f0f0f0;
@@ -47,9 +49,9 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     width: 80%;
     max-width: 600px;
-  }
-  
-  .search-button {
+}
+
+.search-button {
     border: none;
     background-color: rgb(176, 85, 176);
     color: white;
@@ -59,27 +61,28 @@ body {
     margin-left: -57px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
-  }
-  
-  .search-button:hover {
+}
+
+.search-button:hover {
     background-color: purple;
     cursor: pointer;
-  }
-  
-  .principal {
+}
+
+.principal {
     border-radius: 20px;
     background-color: #f0f0f0;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     padding: 20px;
-  }
-  
+}
+
 
 .principal {
-    background-image: url(/src/img/fondo.jpg);
+    background-image: url("img/fondo.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    backdrop-filter: blur(10px); /* Ajusta el valor de desenfoque según tus preferencias */
+    backdrop-filter: blur(10px);
+    /* Ajusta el valor de desenfoque según tus preferencias */
 }
 
 
@@ -103,25 +106,30 @@ body {
 /*NavBar*/
 
 .navbar-custom {
-    background-color: var(--dark); /* Reemplaza con tu color personalizado */
-    background-image: url(/src/img/fondo.jpg);
-    backdrop-filter: blur(10px); /* Ajusta el valor de desenfoque según tus preferencias */
+    background-color: var(--dark);
+    /* Reemplaza con tu color personalizado */
+    background-image: url("img/fondo.jpg");
+    backdrop-filter: blur(10px);
+    /* Ajusta el valor de desenfoque según tus preferencias */
     background-size: cover;
     background-repeat: no-repeat;
-    
+
 }
 
 .navbar-custom .nav-link {
     margin-right: 100px;
     font-size: large;
-    color: #ffffff; /* Reemplaza con tu color deseado para las letras */
-    transition: color 0.8s ease; /* Transición suave de 0.8 segundos */
+    color: #ffffff;
+    /* Reemplaza con tu color deseado para las letras */
+    transition: color 0.8s ease;
+    /* Transición suave de 0.8 segundos */
 
 }
 
 
 .navbar-custom .nav-link:hover {
-    color: #a200ff; /* Color al hacer hover en las letras */
+    color: #a200ff;
+    /* Color al hacer hover en las letras */
 }
 
 /*Edicion input para buscar*/
@@ -134,19 +142,20 @@ body {
 /*Slider*/
 
 .carousel-inner .carousel-item {
-    transition-duration: 3s; /* Ajusta el valor a la duración deseada en segundos */
+    transition-duration: 3s;
+    /* Ajusta el valor a la duración deseada en segundos */
 }
 
 
 /*Cards para las peliculas*/
 
-.main{
-    display:flex;
+.main {
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.movie{
+.movie {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -163,13 +172,13 @@ body {
 }
 
 
-.movie img{
-    width:100%;
+.movie img {
+    width: 100%;
 }
 
 
-.movie-info{
-    color:#eee;
+.movie-info {
+    color: #eee;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -177,45 +186,45 @@ body {
     letter-spacing: 0.5px;
 }
 
-.movie-info h3{
+.movie-info h3 {
     margin-top: 0;
 }
 
-.movie-info span{
+.movie-info span {
     background-color: var(--primary-color);
     padding: 0.30rem 0.30rem;
     border-radius: 15px;
     font-weight: bold;
 }
 
-.movie-info span.green{
+.movie-info span.green {
     color: lightgreen;
 }
 
-.movie-info span.orange{
+.movie-info span.orange {
     color: orange;
 }
 
-.movie-info span.pink{
+.movie-info span.pink {
     color: pink;
 }
 
-  
 
-.overview{
-    position:absolute;
-    left:0;
-    right:0;
-    bottom:0;
+
+.overview {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background-color: white;
     padding: 1rem;
     max-height: 100%;
-    transform:translateY(101%);
-    transition:transform 0.5s ease-in;
+    transform: translateY(101%);
+    transition: transform 0.5s ease-in;
     color: #16191c;
 }
 
-.movie:hover .overview{
+.movie:hover .overview {
     transform: translateY(0);
 }
 
@@ -225,10 +234,10 @@ body {
     right: 10px;
     color: red;
     font-size: 1.5rem;
-  }
-  
+}
 
-#tags{
+
+#tags {
     width: 80%;
     display: flex;
     flex-wrap: wrap;
@@ -237,7 +246,7 @@ body {
     margin: 10px auto;
 }
 
-.tag{
+.tag {
     color: #782eaa;
     font-weight: 600;
     padding: 10px;
@@ -250,15 +259,17 @@ body {
 }
 
 .tag:hover {
-    transform: scale(1.1) translateY(-10px); /* Agranda y salta el elemento */
-  transition: transform 0.3s ease-in-out; /* Agrega una transición suave */
-  }
+    transform: scale(1.1) translateY(-10px);
+    /* Agranda y salta el elemento */
+    transition: transform 0.3s ease-in-out;
+    /* Agrega una transición suave */
+}
 
-.tag.highlight{
+.tag.highlight {
     background-color: #782eaa;
     color: #fff;
 }
 
-.no-results{
+.no-results {
     text-align: center;
 }
