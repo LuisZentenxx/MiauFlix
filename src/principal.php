@@ -1,3 +1,20 @@
+<?php
+    session_start();
+
+    if(!isset($_SESSION['usuario'])){
+        echo '
+            <script>
+                alert("Por favor debes iniciar sesión");
+                window.location="signIns.php";
+            </script>
+        ';
+        //header('Location: login.php');
+        session_destroy();
+        die();
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -109,7 +126,7 @@
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
             crossorigin="anonymous"></script>
         <!--Sript del proyecto-->
-        <script src="app/javaScript.js"></script>
+        <script src="app/javascript.js"></script>
         <!--funciones globales-->
         <script src="app/javascriptGlobal.js"></script>
 </body>
