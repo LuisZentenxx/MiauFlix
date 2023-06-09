@@ -92,6 +92,7 @@ const main = document.getElementById('main');
 const form = document.getElementById('form');
 const search = document.getElementById('search')
 const tagsEl = document.getElementById('tags');
+const favoriteMovies = [];
 
 var selectedGenre = []
 setGenre();
@@ -193,11 +194,19 @@ function showMovies(data){
             <h3>OverView</h3>
             ${overview}
         </div>`
-   
+
+        // Agregar evento de doble clic para agregar a favoritos
+        movieE1.addEventListener('dblclick', () => {
+            if (!favoriteMovies.includes(movie)) {
+                favoriteMovies.push(movie);
+                console.log('Película agregada a favoritos:', movie);
+            }
+        });
         
         main.appendChild(movieE1);
     });
 }
+
 
 function getColor(vote) {
     if(vote>= 8){
