@@ -22,6 +22,7 @@ body {
     text-transform: uppercase;
     letter-spacing: 0.1em;
     color: white;
+    padding-top: 50px;
     }
 .titulo:hover {
     color: black; /* Color al hacer hover en las letras */
@@ -214,4 +215,39 @@ body {
 
 .movie:hover .overview{
     transform: translateY(0);
+}
+
+#tags{
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+}
+
+.tag{
+    color: #782eaa;
+    font-weight: 600;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 50px;
+    margin-top: 20px;
+    margin-right: 10px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.tag:hover {
+    transform: scale(1.1) translateY(-10px); /* Agranda y salta el elemento */
+  transition: transform 0.3s ease-in-out; /* Agrega una transición suave */
+  }
+
+.tag.highlight{
+    background-color: #782eaa;
+    color: #fff;
+}
+
+.no-results{
+    text-align: center;
 }
