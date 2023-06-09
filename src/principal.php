@@ -1,17 +1,17 @@
 <?php
-session_start();
+    session_start();
 
-if (!isset($_SESSION['usuario'])) {
-    echo '
+    if(!isset($_SESSION['usuario'])){
+        echo '
             <script>
                 alert("Por favor debes iniciar sesión");
                 window.location="signIns.php";
             </script>
         ';
-    //header('Location: login.php');
-    session_destroy();
-    die();
-}
+        //header('Location: login.php');
+        session_destroy();
+        die();
+    }
 
 ?>
 
@@ -95,7 +95,7 @@ if (!isset($_SESSION['usuario'])) {
         </div>
     </div>
 
-
+    
     <section class="principal">
 
         <div id="tags"></div>
@@ -106,29 +106,29 @@ if (!isset($_SESSION['usuario'])) {
         <form id="form" class="search-form">
             <input type="text" placeholder="Search" id="search" class="search-input">
             <button type="submit" class="search-button"><i class="bi bi-search-heart"></i></button>
-        </form>
-
-        <!--Tarjetas peliculas plantilla-->
-        <div id="main" class="main row">
-            <div class="movie">
-                <img src="img/movie.jpg" alt="image">
-                <div class="movie-info">
-                    <h3>Movie Tittle</h3>
-                    <span class="green">9.8</span>
-                    <span class="favorite"><i class="bi bi-heart"></i></span>
+          </form>
+       
+            <!--Tarjetas peliculas plantilla-->
+            <div id="main" class="main row">
+                <div class="movie">
+                    <img src="img/movie.jpg" alt="image">
+                    <div class="movie-info">
+                        <h3>Movie Tittle</h3>
+                        <span class="green">9.8</span>
+                        <span class="favorite"><i class="bi bi-heart"></i></span>
+                    </div>
                 </div>
-            </div>
 
 
-    </section>
-    <!--Script bootstrap-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-    <!--Sript del proyecto-->
-    <script src="app/javaScript.js"></script>
-    <!--funciones globales-->
-    <script src="app/javascriptGlobal.js"></script>
+        </section>
+        <!--Script bootstrap-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+        <!--Sript del proyecto-->
+        <script src="app/javascript.js"></script>
+        <!--funciones globales-->
+        <script src="app/javascriptGlobal.js"></script>
 </body>
 
 </html>

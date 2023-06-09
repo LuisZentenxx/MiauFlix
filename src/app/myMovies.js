@@ -1,5 +1,3 @@
-//TMDB
-
 const API_KEY = 'api_key=2da2b603a5f727a25814914e02d4cd35';
 const BASE_URL ='https://api.themoviedb.org/3';
 const API_URL = BASE_URL + '/discover/movie?sort_by=popularity.desc&'
@@ -7,7 +5,6 @@ const API_URL = BASE_URL + '/discover/movie?sort_by=popularity.desc&'
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 const searchURL = BASE_URL + '/search/movie?'+ API_KEY;
 
-// Arreglo de generos
 const genres = [
     {
       "id": 28,
@@ -87,12 +84,11 @@ const genres = [
     }
   ]
 
-// variables globales
-const main = document.getElementById('main');
+ // Variables globales
+ const main = document.getElementById('main');
 const form = document.getElementById('form');
 const search = document.getElementById('search')
 const tagsEl = document.getElementById('tags');
-const favoriteMovies = [];
 
 var selectedGenre = []
 setGenre();
@@ -128,37 +124,38 @@ function setGenre(){
 }
 
 function highlightSelection() {
-    const tags = document.querySelectorAll('.tag');
-    tags.forEach(tag => {
-        tag.classList.remove('highlight')
-    })
-    clearBtn()
-    if (selectedGenre.length !== 0) {
-        selectedGenre.forEach(id => {
-            const highlightedTag = document.getElementById(id);
-            highlightedTag.classList.add('highlight');
-        })
-    }
+  const tags = document.querySelectorAll('.tag');
+  tags.forEach(tag => {
+      tag.classList.remove('highlight')
+  })
+  clearBtn()
+  if (selectedGenre.length !== 0) {
+      selectedGenre.forEach(id => {
+          const highlightedTag = document.getElementById(id);
+          highlightedTag.classList.add('highlight');
+      })
+  }
 }
+
 
 function clearBtn() {
 
-    let clearBtn = document.getElementById('clear');
-    if (clearBtn) {
-        clearBtn.classList.add('highlight')
+  let clearBtn = document.getElementById('clear');
+  if (clearBtn) {
+      clearBtn.classList.add('highlight')
 
-    }else{
-        let clear = document.createElement('div');
-        clear.classList.add('tag', 'highlight');
-        clear.id = 'clear';
-        clear.innerText = 'Clear All'
-        clear.addEventListener('click', () => {
-            selectedGenre = [];
-            setGenre();
-            getMovies(API_URL);
-        })
-        tagsEl.append(clear);
-    }
+  }else{
+      let clear = document.createElement('div');
+      clear.classList.add('tag', 'highlight');
+      clear.id = 'clear';
+      clear.innerText = 'Clear All'
+      clear.addEventListener('click', () => {
+          selectedGenre = [];
+          setGenre();
+          getMovies(API_URL);
+      })
+      tagsEl.append(clear);
+  }
 }
 
 getMovies(API_URL);
@@ -176,69 +173,57 @@ function getMovies(url) {
         })
 }
 
-function showMovies(data) {
+document.addEventListener('DOMContentLoaded', () => {
+  const favoriteMovies = JSON.parse(localStorage.getItem('favoriteMovies'));
+  if (favoriteMovies && favoriteMovies.length > 0) {
+    showFavoriteMovies(favoriteMovies);
+  } else {
+    main.innerHTML = '<h1 class="no-results">No favorite movies found</h1>';
+  }
+});
+
+function showFavoriteMovies(favoriteMovies) {
   main.innerHTML = '';
-  data.forEach(movie => {
-      const { title, poster_path, vote_average, overview } = movie;
-      const movieE1 = document.createElement('div');
-      movieE1.classList.add('movie');
-      movieE1.innerHTML =
-          `<img src="${poster_path ? IMG_URL + poster_path : "http://via.placeholder.com/1080x1580"}" alt="${title}">
-  
-          <div class="movie-info">
-              <h3>${title}</h3>
-              <span class="${getColor(vote_average)}">${vote_average}
-              </span>
-          </div>
-          <div class="overview">
-              <h3>OverView</h3>
-              ${overview}
-          </div>`;
-  
-      // Agregar evento de doble clic para agregar o eliminar de favoritos
-      movieE1.addEventListener('dblclick', () => {
-          const index = favoriteMovies.findIndex(favoriteMovie => favoriteMovie.title === movie.title);
-          if (index === -1) {
-              favoriteMovies.push(movie);
-              console.log('Película agregada a favoritos:', movie);
-          } else {
-              favoriteMovies.splice(index, 1);
-              console.log('Película eliminada de favoritos:', movie);
-          }
-  
-          localStorage.setItem('favoriteMovies', JSON.stringify(favoriteMovies));
-      });
-  
-      main.appendChild(movieE1);
+  favoriteMovies.forEach(movie => {
+    const { title, poster_path, vote_average, overview } = movie;
+    const movieEl = document.createElement('div');
+    movieEl.classList.add('movie');
+    movieEl.innerHTML = `
+      <img src="${poster_path ? IMG_URL + poster_path : 'http://via.placeholder.com/1080x1580'}" alt="${title}">
+      <div class="movie-info">
+        <h3>${title}</h3>
+        <span class="${getColor(vote_average)}">${vote_average}</span>
+      </div>
+      <div class="overview">
+        <h3>Overview</h3>
+        ${overview}
+      </div>
+    `;
+    main.appendChild(movieEl);
   });
 }
 
-
-
 function getColor(vote) {
-    if(vote>= 8){
-        return 'green'
-    }else if(vote >= 5){
-        return "orange"
-    }else{
-        return 'red'
-    }
+  if (vote >= 8) {
+    return 'green';
+  } else if (vote >= 5) {
+    return 'orange';
+  } else {
+    return 'red';
+  }
 }
 
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
 
-// formulario de buscar
+  const searchTerm = search.value;
+  selectedGenre = [];
+  highlightSelection();
 
-form.addEventListener('submit',(e)=>{
-    e.preventDefault();
-
-    const searchTerm = search.value;
-    selectedGenre = [];
-    highlightSelection()
-    
-    if(searchTerm){
-        getMovies(searchURL+'&query='+searchTerm)
-    }else{
-        getMovies(API_URL);
-    }
-})
-
+  if (searchTerm) {
+      const filteredMovies = favoriteMovies.filter(movie => movie.title.toLowerCase().includes(searchTerm.toLowerCase()));
+      showMovies(filteredMovies);
+  } else {
+      getMovies(API_URL);
+  }
+});
