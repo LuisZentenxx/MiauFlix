@@ -1,3 +1,11 @@
+<?php
+    session_start();
+
+    if(isset($_SESSION['usuario'])){
+        header("Location: principal.php");
+    }
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -24,7 +32,9 @@
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
   <!-- Main -->
+  
   <script src="./main.js" type="module"></script>
+  
 
   <title>MiauFlix</title>
 </head>
@@ -60,7 +70,7 @@
         <div class="px-lg-5 py-lg-4 p-4 w-100 m">
           <h1 class="font-weight-bold-mb-4">Welcome Back</h1>
 
-          <form id="signup-form" class="mb-5" action = "php/signIn_backend.php" method = "POST">
+          <form id="signup-form" class="mb-5" action = "php/singIn_backend.php" method = "POST">
             <!-- Campo Email -->
             <div class="mb-4 needs-validation">
               <label for="email" class="form-label font-weight-bold ">Email</label>
@@ -74,7 +84,8 @@
                 placeholder="Enter your password" required>
               <a href="#" id="emailHelp" class="form-text text-muted text-decoration-none">Forgot your password?</a>
             </div>
-            <button type="submit" id="login" class="btn btn-primary w-100">Login</button>
+            <!--Botón para iniciar sesión-->
+            <button type="submit" id="login" name="submit" class="btn btn-primary w-100">Login</button>
           </form>
 
           <p class="font-weight-bold text-center text-muted">or Signup with</p>
@@ -87,7 +98,7 @@
         </div>
 
         <div class="text-center px-lg-5 pt-lg-3 pb-lg-4 p-4 w-100 mt-auto">
-          <p class="d-inline-block mb-0">Don't have an account?</p> <a href="#"
+          <p class="d-inline-block mb-0">Don't have an account?</p> <a href="signup.php"
             class="text-light font-weight-bold text-decoration-none">Create an account now</a>
         </div>
       </div>

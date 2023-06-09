@@ -1,3 +1,22 @@
+
+
+<?php
+    session_start();
+
+    if(!isset($_SESSION['usuario'])){
+        echo '
+            <script>
+                alert("Por favor debes iniciar sesión");
+                window.location="signIns.php";
+            </script>
+        ';
+        //header('Location: login.php');
+        session_destroy();
+        die();
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -54,7 +73,7 @@
                         <a class="nav-link" href="/src/myMovies.html">My movies</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="/src/signIns.php" tabindex="-1" aria-disabled="true">Exit</a>
+                        <a class="nav-link active"  href="php/cerrar_sesion.php" tabindex="-1" aria-disabled="true">Exit</a>
                     </li>
                 </ul>
 
