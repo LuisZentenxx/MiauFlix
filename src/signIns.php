@@ -60,7 +60,7 @@
         <div class="px-lg-5 py-lg-4 p-4 w-100 m">
           <h1 class="font-weight-bold-mb-4">Welcome Back</h1>
 
-          <form id="signup-form" class="mb-5">
+          <form id="signup-form" class="mb-5" action = "php/signIn_backend.php" method = "POST">
             <!-- Campo Email -->
             <div class="mb-4 needs-validation">
               <label for="email" class="form-label font-weight-bold ">Email</label>
