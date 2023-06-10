@@ -1,3 +1,20 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['usuario'])) {
+    echo '
+            <script>
+                alert("Por favor debes iniciar sesión");
+                window.location="signIns.php";
+            </script>
+        ';
+    //header('Location: login.php');
+    session_destroy();
+    die();
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -48,7 +65,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/src/principal.html">Home</a>
+                        <a class="nav-link active" aria-current="page" href="principal.php">Home</a>
                     </li>
                 </ul>
 
@@ -94,9 +111,16 @@
                         <span class="green">9.8</span>
                     </div>
                 </div>
-
-
         </section>
+        <!--Paginación-->
+        <div class="paginacion">
+            <div class="page" id="prew">Previus Page</div>
+            <div class="current" id="current">1</div>
+            <div class="page" id="next">Next Page</div>
+        </div>
+
+
+
         <!--Script bootstrap-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"

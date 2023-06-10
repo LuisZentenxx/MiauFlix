@@ -27,6 +27,8 @@ if (!isset($_SESSION['usuario'])) {
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!--Css-->
     <link rel="stylesheet" href="estilosPrincipal.css">
+    <!--Css Paginacion-->
+    <link rel="stylesheet" href="paginacion.css">
     <!--Icono navegador-->
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <!--Fuentes-->
@@ -65,10 +67,10 @@ if (!isset($_SESSION['usuario'])) {
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="principal.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="myMovies.html">My movies</a>
+                        <a class="nav-link" href="myMovies.php">My movies</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="php/cerrar_sesion.php" tabindex="-1" aria-disabled="true">Exit</a>
@@ -118,9 +120,15 @@ if (!isset($_SESSION['usuario'])) {
                     <span class="favorite"><i class="bi bi-heart"></i></span>
                 </div>
             </div>
-
+    
 
     </section>
+    <!--Paginación-->
+    <div class="pagination">
+            <div class="page disabled" id="prew">Previus Page</div>
+            <div class="current" id="current">1</div>
+            <div class="page" id="next">Next Page</div>
+    </div>
     <!--Script bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
