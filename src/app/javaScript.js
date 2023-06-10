@@ -94,6 +94,17 @@ const search = document.getElementById('search')
 const tagsEl = document.getElementById('tags');
 const favoriteMovies = [];
 
+const prev = document.getElementById('prev')
+const next = document.getElementById('next')
+const current = document.getElementById('current')
+
+var currentPage = 1;
+var nextPage = 2;
+var prevPAge = 3;
+lastUrl = '';
+
+var totalPAges = 100;
+
 var selectedGenre = []
 setGenre();
 function setGenre(){

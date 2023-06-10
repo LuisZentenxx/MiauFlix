@@ -1,0 +1,26 @@
+.pagination{
+    display: flex;
+    margin: 10px 30px;
+    align-items: center;
+    justify-content: center ;
+    color: white;
+}
+
+.page{
+    padding: 20px;
+    cursor: pointer;
+
+}
+
+.page.disabled{
+    cursor:not-allowed;
+    color: gray;
+}
+
+.current{
+    padding: 10px 15px;
+    border-radius: 50%;
+    border: 5px solid #782eaa;
+    font-size: 20px;
+    font-weight: 600;
+}
